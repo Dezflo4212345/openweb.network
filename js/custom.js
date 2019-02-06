@@ -109,7 +109,7 @@ $( document ).ready(function() {
         }
         
         var priceT = priceMeta["domain"] / currTokenPrice;
-        priceT = parseInt(priceT);
+        priceT = parseInt(priceT) + 1;
 
         ow.methods.getDomainMeta(domain).call(
             function(err, _dt){
@@ -161,7 +161,7 @@ $( document ).ready(function() {
         $("._subscribeCont").show();
         
         var priceT = priceMeta["user"] / currTokenPrice;
-        priceT = parseInt(priceT);
+        priceT = parseInt(priceT) + 1;
         
         $("._usCost ._dn_tprice").text("~ "+priceT);
     });
@@ -188,7 +188,7 @@ $( document ).ready(function() {
         $("._regHostCont").show();
         
         var priceT = priceMeta["host"] / currTokenPrice;
-        priceT = parseInt(priceT);
+        priceT = parseInt(priceT) + 1;
         
         $("._hsCost ._dn_tprice").text("~ "+priceT);
     });
@@ -214,7 +214,7 @@ $( document ).ready(function() {
         $("._pubWebsiteCont").show();
         
         var priceT = priceMeta["publish"] / currTokenPrice;
-        priceT = parseInt(priceT);
+        priceT = parseInt(priceT) + 1;
         
         $("._pwCost ._dn_tprice").text("~ "+priceT);
     });
