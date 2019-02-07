@@ -102,6 +102,8 @@ $( document ).ready(function() {
             return false;
         }
         
+        domain = domain.toLowerCase();
+        
         if(!_checkValidDomain(domain)){
             _error("_domianreg", "Invalid Domain Name");
             _loader("._checkDomain");
