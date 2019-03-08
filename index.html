@@ -441,6 +441,68 @@
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>
         <script src="js/custom.js"></script>
+        
+        <script>
+            $(document).ready(function(){	
+
+                window.ifr_width = function(){
+                    var wd = $('body').width() - 20;
+                    var max_width = 390;
+                    if(wd > max_width){ wd = max_width; }
+
+                    $(".ad_iframe iframe").css('width', wd+'px');
+                };
+
+                window._url_get = function(k){
+                    var link = location.href;
+                    var url = new URL(link);
+                    return url.searchParams.get(k);
+                };
+
+                $('.open_ad_widget').on('click', function(){
+                    var namespace = 'openweb';
+                    var rf = _url_get('rf');
+                    $(".ad_iframe").html('<div class="ad_iframe_close">x</div>\
+                    <iframe src="https://blockching.io/app/?namespace='+namespace+'&rf='+rf+'" frameborder="0" border="0" cellspacing="0">');
+                    ifr_width();
+                });
+
+                $('body').on('click', '.ad_iframe_close', function(){
+                    $(".ad_iframe").html('');
+                });
+            });
+        </script>
+
+
+        <style>
+            .ad_iframe {
+                position: fixed;
+                z-index: 10000;
+                bottom: -17px;
+                height: 90%;
+                left: 10px;
+                box-shadow: 0 3px 9px 0 rgba(0,0,0,.2);
+                overflow-y:auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .ad_iframe_close {
+                position: absolute;
+                right: 25px;
+                top: 12px;
+                font-size: 22px;
+                cursor: pointer;
+            }
+
+            .ad_iframe iframe {
+                height: 96%;
+                overflow: hidden;
+            }
+
+            .nav {
+                z-index: 1 !important;
+            }
+        </style>
     </body>
 
 </html>
