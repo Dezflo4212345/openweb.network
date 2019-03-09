@@ -7,7 +7,7 @@ $( document ).ready(function() {
     var _uAddress = "";
     
     var currTokenPrice = 0;
-    var websiteFilesLimit = 200;
+    var websiteFilesLimit = 20;
     
     var priceMeta = {
         "domain": 500,
