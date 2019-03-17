@@ -20,7 +20,7 @@ $( document ).ready(function() {
     var ow = new web3.eth.Contract(owAbi, owContract);
     
     function _checkValidDomain(domain){
-        if(domain.length <= 16){
+        if(domain.length <= 32){
             if(domain.includes(".")){
                 return domain.split(".", 2)[1] == "ow";
             } else {
