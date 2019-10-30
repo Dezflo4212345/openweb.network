@@ -177,7 +177,7 @@ $( document ).ready(function() {
         } else {
             _error("_usub", "Enter Valid Duration");
             return false;
-        
+        }
         var _data = ow.methods.userSubscribe(_uduration).encodeABI();
         
         var _url = intrProvider+"?to="+owContract+"&value=0&data="+_data+"#send-transaction";
