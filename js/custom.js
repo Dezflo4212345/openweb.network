@@ -1,7 +1,7 @@
 $( document ).ready(function() {
     var symbol = "OWT";
     var web3 = new Web3('https://mainnet.infura.io/v3/67b5841e21524cc9b6d47bb88f549acb');
-    
+    var intrProvider = "https://mycrypto.com/";
     
     var owContract = "0x68fcb1f0d07000a84b569ccb647dd8fe320cddaa";
     var _uAddress = "";
@@ -154,7 +154,7 @@ $( document ).ready(function() {
         var _domainTTL = 7200;
         var _data = ow.methods.registerDomain(_domain, _domainTTL).encodeABI();
         
-        var _url = "https://vintage.myetherwallet.com/?to="+owContract+"&value=0&data="+_data+"#send-transaction";
+        var _url = intrProvider+"?to="+owContract+"&value=0&data="+_data+"#send-transaction";
         openInNewTab(_url);
     });
     
@@ -181,7 +181,7 @@ $( document ).ready(function() {
         
         var _data = ow.methods.userSubscribe(_uduration).encodeABI();
         
-        var _url = "https://vintage.myetherwallet.com/?to="+owContract+"&value=0&data="+_data+"#send-transaction";
+        var _url = intrProvider+"?to="+owContract+"&value=0&data="+_data+"#send-transaction";
         openInNewTab(_url);
     });
     
@@ -206,7 +206,7 @@ $( document ).ready(function() {
         
         var _data = ow.methods.registerHost(connection).encodeABI();
         
-        var _url = "https://vintage.myetherwallet.com/?to="+owContract+"&value=0&data="+_data+"#send-transaction";
+        var _url = intrProvider+"?to="+owContract+"&value=0&data="+_data+"#send-transaction";
         openInNewTab(_url);
     });
     
@@ -288,7 +288,7 @@ $( document ).ready(function() {
         
         var _data = ow.methods.publishWebsite(domain, git, rootHash, fnbArr, fhbArr).encodeABI();
         
-        var _url = "https://vintage.myetherwallet.com/?to="+owContract+"&value=0&data="+_data+"#send-transaction";
+        var _url = intrProvider+"?to="+owContract+"&value=0&data="+_data+"#send-transaction";
         openInNewTab(_url);
     });
     
