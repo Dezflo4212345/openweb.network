@@ -6,7 +6,6 @@ $( document ).ready(function() {
     var owContract = "0x68fcb1f0d07000a84b569ccb647dd8fe320cddaa";
     var _uAddress = "";
     
-    
     var currTokenPrice = 0;
     var websiteFilesLimit = 20;
     
